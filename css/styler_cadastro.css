@@ -1,125 +1,80 @@
 @import url(styler_estrutura_pagina.css);
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: roboto; 
- }
-
-#geral{
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+/* Fundo da página */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
 }
 
-#cabecalho{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    height: 100px;
-}
-
-#menu ul{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-#menu img{
-    width: 35px;
-    height: 35px;
-}
-
-#rodape{
-    width: 100%;
-    height: 180px;
-    background-color: #9073b1;
-    margin: 20px 0px;
-    color: var(--branca);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    flex-direction: column;
-}
-
-/*FORMATANDO LINKS*/
-#menu a:link{
-    font-size: 1.4em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: var(--cor02);
-}
-
-h3{
-    text-align: center;
-    color: black;
-    font-family: arial;
-    background-color: rgb(197, 149, 241);
-}
-
-#menu a:visited{
-    font-size: 1.4em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: var(--cor02);
-}
-
-#menu a{
-    display: inline-block;
-    transition: transform .3s ease, color .3s ease;
-}
-
-#menu a:hover{
-    transform: translateY(-5px);
-    color: var(--cor01);
-}
-
-#menu a:active{
-    color: var(--cor01);
-}
-
+/* Caixa do formulário */
 #div-form{
-    width: 650px;
-    padding: 5px;
-    margin: 20px 0;
-    background-color: rgb(206, 173, 236);
-    color: aliceblue;
-    align-items: center;
+    width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Título */
+#div-form h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+#div-formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+#div-formulario label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Campos */
+#div-formulario input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Área dos botões */
+.botoes{
+    display: flex;
     justify-content: center;
-
+    gap: 20px;
+    margin-top: 25px;
 }
 
-#form-cadastro{
-    padding: 15px;
-    font-size: 1.2em;
+/* Botão Cadastrar */
+#btn-cadastrar{
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-label, input{
-    display: block;
-    margin: 15px 0;
+/* Botão Limpar */
+#btn-limpar{
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-input{
-    width: 230px;
-    height: 20px;
+#btn-cadastrar:hover,
+#btn-limpar:hover{
+    opacity: 0.8;
 }
-
-label{
-    color:  rgb(8, 8, 8);
-}
-
-button{
-    width: 230px;
-    height: 40PX;
-    border: ridge;
-}
-
