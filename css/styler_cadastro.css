@@ -1,0 +1,125 @@
+@import url(styler_estrutura_pagina.css);
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: roboto; 
+ }
+
+#geral{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#cabecalho{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    height: 100px;
+}
+
+#menu ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+#menu img{
+    width: 35px;
+    height: 35px;
+}
+
+#rodape{
+    width: 100%;
+    height: 180px;
+    background-color: #9073b1;
+    margin: 20px 0px;
+    color: var(--branca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+}
+
+/*FORMATANDO LINKS*/
+#menu a:link{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
+h3{
+    text-align: center;
+    color: black;
+    font-family: arial;
+    background-color: rgb(197, 149, 241);
+}
+
+#menu a:visited{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
+#menu a{
+    display: inline-block;
+    transition: transform .3s ease, color .3s ease;
+}
+
+#menu a:hover{
+    transform: translateY(-5px);
+    color: var(--cor01);
+}
+
+#menu a:active{
+    color: var(--cor01);
+}
+
+#div-form{
+    width: 650px;
+    padding: 5px;
+    margin: 20px 0;
+    background-color: rgb(206, 173, 236);
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#form-cadastro{
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+label, input{
+    display: block;
+    margin: 15px 0;
+}
+
+input{
+    width: 230px;
+    height: 20px;
+}
+
+label{
+    color:  rgb(8, 8, 8);
+}
+
+button{
+    width: 230px;
+    height: 40PX;
+    border: ridge;
+}
+
