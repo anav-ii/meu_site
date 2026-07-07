@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - MOTORCYCLES</title>
+    <link rel="stylesheet" href="../css/styler_carrinho.css">
+</head>
+<body>
+
+    <main id="geral">
+
+        <header id="cabecalho">
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../imagens/logo_motorcycles.png" alt="Logo MOTORCYCLES">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li> <a href="carrinho.html"><img src="../imagens/carrinho22.png" alt="Carrinho"></a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <section id="titulo-carrinho">
+            <h1>Meu Carrinho</h1>
+        </section>
+
+        <section id="conteudo-carrinho">
+
+            <section id="lista-produtos">
+
+                <div class="produto">
+
+                    <img src="../imagens/s1000.jpg" alt="BMW S1000RR">
+
+                    <div class="descricao">
+                        <h2>BMW S1000RR</h2>
+                        <p>Preço: R$ 110.000,00</p>
+                    </div>
+
+                    <div class="quantidade">
+                        <button>-</button>
+
+                        <input type="number" value="1" min="1">
+
+                        <button>+</button>
+                    </div>
+
+                    <div class="subtotal">
+                        R$ 110.000,00
+                    </div>
+
+                </div>
+
+                <div class="produto">
+
+                    <img src="../imagens/202509_CB300F_TWISTER_2026_COR_CBS_Cinza.webp" alt="CB300F">
+
+                    <div class="descricao">
+                        <h2>Honda CB300F</h2>
+                        <p>Preço: R$ 45.000,00</p>
+                    </div>
+
+                    <div class="quantidade">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                    <div class="subtotal">
+                        R$ 45.000,00
+                    </div>
+
+                </div>
+
+            </section>
+
+            <aside id="resumo">
+                <h2>Resumo da Compra</h2>
+
+                <div class="linha">
+                    <span>Subtotal:</span>
+                    <strong>R$ 155.000,00</strong>
+                </div>
+                <div class="linha">
+                    <span>Frete:</span>
+                    <strong>R$ 200,00</strong>
+                </div>
+                <div class="linha total">
+                    <span>Total:</span>
+                    <strong>R$ 155.200,00</strong>
+                </div>
+                <button class="btn-continuar">
+                    Continuar Comprando
+                </button>
+                <button class="btn-finalizar">
+                    Finalizar Compra
+                </button>
+
+            </aside>
+
+        </section>
+
+    
+        <footer id="rodape">
+            <h2>&copy; 2026 MOTORCYCLES S.A. Todos os direitos reservados</h2>
+            <p>Formas de pagamento: Pix, Cartões de Débito e Crédito</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 @import url(styler_estrutura_pagina.css);
 
-/* Fundo da página */
 body{
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@ body{
     background: #f2f2f2;
 }
 
-/* Caixa do formulário */
 #div-form{
     width: 600px;
     margin: 40px auto;
@@ -18,25 +16,23 @@ body{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Título */
 #div-form h3{
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Formulário */
 #div-formulario{
     display: flex;
     flex-direction: column;
 }
 
-/* Labels */
+
 #div-formulario label{
     margin-top: 10px;
     font-weight: bold;
 }
 
-/* Campos */
+
 #div-formulario input{
     width: 100%;
     padding: 10px;
@@ -46,7 +42,7 @@ body{
     box-sizing: border-box;
 }
 
-/* Área dos botões */
+
 .botoes{
     display: flex;
     justify-content: center;
@@ -54,7 +50,6 @@ body{
     margin-top: 25px;
 }
 
-/* Botão Cadastrar */
 #btn-cadastrar{
     background: #28a745;
     color: white;
@@ -64,7 +59,6 @@ body{
     cursor: pointer;
 }
 
-/* Botão Limpar */
 #btn-limpar{
     background: #dc3545;
     color: white;
