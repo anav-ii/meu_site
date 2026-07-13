@@ -43,7 +43,7 @@ const menuSecoes = () => {
         aMenu.innerHTML = elem.secao
 
         aMenu.addEventListener('click', ()=>{
-            montaCards(filtroProduto(elem.id_secao))
+            montaCards(filtroProduto(elem.idSecao))
         })
 
         //ADICIONANDO O ELEMENTO FILHO a NO li
@@ -59,8 +59,23 @@ const menuSecoes = () => {
 //FUNÇÃO FILTRO PRODUTO
 const filtroProduto = (idSecao)=>{
     //FILTRANDO OS PRODUTOS A PARTIR DO REPETIÇÃO 
-        return produtos.filter(elem =>elem.id_secao === idSecao)
+        return motos.filter(elem =>elem.idSecao === idSecao)
     }
+
+
+ //CAPTURANDO OS CARACTERES DO INPUT PESQUISA
+ //PEGANDO O INPUT DO DOM
+ const inputPesquisa = document.querySelector('#pesquisa')
+
+ inputPesquisa.addEventListener('input', (evt)=>{
+    //PEGANDO O VALOR DO input E CONVERTENDO EM MINÙSCULO
+    let txtInput = evt.target.value.toLowerCase()
+
+    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUINDO 
+    montaCards(motos.filter(elem => elem.descricao.toLowerCase().includes(txtInput)))
+})
+
+
 
  //FUNÇÃO MONTA CARDS
    const montaCards = (objProdutos) =>{
@@ -92,6 +107,10 @@ const filtroProduto = (idSecao)=>{
         const btnCard = document.createElement('button')
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
+
+        btnCard.addEventListener('click', ()=>{
+            window.location.href = 'paginas/carrinho.html'
+        })
 
         //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
         divCards.appendChild(imgCard)
