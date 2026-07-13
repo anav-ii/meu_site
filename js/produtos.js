@@ -1,5 +1,8 @@
 //IMPORTANDO OS PRODUTOS DO ARQUIVO lista-produtos.js
 import { motos } from './lista_produtos.js'
+//IMPORTANDO
+import { addItem } from './carrinho.js'
+
 
 //PEGANDO ELEMENTOS DO DOM
 const sectionCards = document.querySelector('#cards')
@@ -32,6 +35,21 @@ const menuSecoes = () => {
         //LIMPANDO O ELEMENTO li
         ulMenuSecoes.innerHTML = ''
 
+        // MENU TODOS
+        const liTodos = document.createElement('li')
+        const aTodos = document.createElement('a')
+
+        aTodos.setAttribute('href', '#')
+        aTodos.setAttribute('class', 'lnk-secao')
+        aTodos.innerHTML = 'Todos'
+
+        aTodos.addEventListener('click', () => {
+            montaCards(motos)
+        })
+
+    liTodos.appendChild(aTodos)
+    ulMenuSecoes.appendChild(liTodos)
+
         //CRIANDO O ELEMENTO a ATRIBUINDO O NOME DA SEÇÃO
         menuSecoes().forEach((elem, i)=>{
         const liMenu = document.createElement('li')
@@ -53,6 +71,7 @@ const menuSecoes = () => {
         ulMenuSecoes.appendChild(liMenu)
     })
 }    
+
 
     carregaSecoes()
 
@@ -109,6 +128,7 @@ const filtroProduto = (idSecao)=>{
         btnCard.innerHTML = 'Adicionar'
 
         btnCard.addEventListener('click', ()=>{
+            addItem(elem)
             window.location.href = 'paginas/carrinho.html'
         })
 
