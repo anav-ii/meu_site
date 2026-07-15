@@ -65,7 +65,7 @@ const motos = [
     {
       idProduto: 8,
       descricao: "Yamaha Factor 150",
-      valorUnitario: 17990.00,
+      descricao: 17990.00,
       unidade: "UN",
       caminho: "img/motos/yamaha-factor-150.jpg",
       idSecao: 1,
