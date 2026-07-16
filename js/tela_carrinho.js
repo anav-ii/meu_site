@@ -1,5 +1,24 @@
 import { listItens, removeItem, alterarQuantidade } from "./carrinho.js"
 
+const calcularResumo = () => {
+
+    const itens = listItens();
+
+    let subtotal = 0;
+
+    itens.forEach(item => {
+        subtotal += item.valorUnitario * item.quantidade;
+    });
+
+    const frete = 5;
+
+    document.querySelector("#subtotal").innerHTML =
+        `R$ ${subtotal.toFixed(2)}`;
+
+    document.querySelector("#total").innerHTML =
+        `R$ ${(subtotal + frete).toFixed(2)}`;
+
+}
 
 const montaTelaCarrinho = () => {
     const sectionItensCarrinho = document.querySelector('#lista-produtos')
@@ -30,7 +49,7 @@ const inputQuantidade = document.createElement('input')
         inputQuantidade.setAttribute('value', elem.quantidade)
         inputQuantidade.setAttribute('min', '1')
 
-inputQuantidade.addEventListener('change', (e) => {
+inputQuantidade.addEventListener('input', (e) => {
 
     let novaQuantidade = parseInt(e.target.value)
 
@@ -41,7 +60,7 @@ inputQuantidade.addEventListener('change', (e) => {
 
     alterarQuantidade(i, novaQuantidade)
 
-    montaTelaCarrinho()
+    montaTelaCarrinho() 
 })
 
 
@@ -77,9 +96,11 @@ inputQuantidade.addEventListener('change', (e) => {
 
     })
 
+    calcularResumo();
 }
 
 montaTelaCarrinho()
+
 
 const removeItemTela = (pos)=>{
     removeItem(pos)
