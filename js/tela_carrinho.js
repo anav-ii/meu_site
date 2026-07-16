@@ -1,4 +1,4 @@
-import { listItens, removeItem } from "./carrinho.js"
+import { listItens, removeItem, alterarQuantidade } from "./carrinho.js"
 
 
 const montaTelaCarrinho = () => {
@@ -22,16 +22,32 @@ const montaTelaCarrinho = () => {
         pVlrUnitario.setAttribute('class', 'vlr-unitario')
         pVlrUnitario.innerHTML = `Preço: R$ ${elem.valorUnitario}`
         
-        const inputQuantidade = document.createElement('input')
+const inputQuantidade = document.createElement('input')
         inputQuantidade.setAttribute('type', 'number')
         inputQuantidade.setAttribute('name', `quant${i}`)
         inputQuantidade.setAttribute('id', `quant${i}`)
         inputQuantidade.setAttribute('class', 'input-item')
         inputQuantidade.setAttribute('value', elem.quantidade)
-        
+        inputQuantidade.setAttribute('min', '1')
+
+inputQuantidade.addEventListener('change', (e) => {
+
+    let novaQuantidade = parseInt(e.target.value)
+
+    if (isNaN(novaQuantidade) || novaQuantidade < 1) {
+        novaQuantidade = 1
+        e.target.value = 1
+    }
+
+    alterarQuantidade(i, novaQuantidade)
+
+    montaTelaCarrinho()
+})
+
+
         const pSubTotal = document.createElement('p')
         pSubTotal.setAttribute('class', 'vlr-subtotal')
-        pSubTotal.innerHTML = `Preço: R$ ${elem.valorUnitario}`
+        pSubTotal.innerHTML = `Preço: R$ ${(elem.valorUnitario * elem.quantidade).toFixed(2)}`
 
         const aRemover = document.createElement('a')
         aRemover.setAttribute('href','#')

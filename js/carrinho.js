@@ -18,12 +18,35 @@ const item = (objProduto)=>{
 
 
 
-//FUNÇÃO PARA ADICIONAR UM ITEM
 const addItem = (objItem) => {
-    itensCarrinho.push(item(objItem))
 
+    const produtoExistente = itensCarrinho.find(
+        produto => produto.idProduto === objItem.idProduto
+    )
+    if (produtoExistente) {
+        produtoExistente.quantidade++
+    } else {
+        itensCarrinho.push(item(objItem))
+    }
     sessionStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho))
 }
+
+//FUNÇÃO ALTERAR QUANTIDADE
+const alterarQuantidade = (pos, quantidade) => {
+
+    if (quantidade <= 0) {
+        removeItem(pos)
+        return
+    }
+
+    itensCarrinho[pos].quantidade = quantidade
+
+    sessionStorage.setItem(
+        'carrinhoSessao',
+        JSON.stringify(itensCarrinho)
+    )
+}
+
 
 //FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
 const listItens = () => {
@@ -40,4 +63,4 @@ const removeItem = (pos)=>{
 }
 
 //EXPORTAÇÃO
-export { addItem, listItens, removeItem }
+export { addItem, listItens, removeItem, alterarQuantidade }
