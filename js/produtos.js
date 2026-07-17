@@ -91,7 +91,7 @@ inputPesquisa.addEventListener('input', (evt) => {
     let txtInput = evt.target.value.toLowerCase()
 
     //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUINDO 
-    montaCards(motos.filter(elem => elem.descricao.toLowerCase().includes(txtInput)))
+    montaCards(motos.filter(elem => String(elem.descricao || '').toLowerCase().includes(txtInput)))
 })
 
 
